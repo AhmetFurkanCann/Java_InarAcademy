@@ -6,7 +6,7 @@ public class Exercise_18 {
 		Scanner input=new Scanner (System.in);
 		System.out.println("Enter the weight of the package");
 		double weight = input.nextDouble();
-		if (weight > 50)
+		if (weight > 20)
 			System.out.println("The package cannot be shipped");
 		else {
 			if (weight <= 1 && weight > 0 )
