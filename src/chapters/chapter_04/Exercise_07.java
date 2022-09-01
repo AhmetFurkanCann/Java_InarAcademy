@@ -9,10 +9,10 @@ public class Exercise_07 {
 		System.out.println("Enter the radius of the bounding circle:");
 		double r= input.nextDouble();
 		double angle1=(Math.PI / 2);
-		double angle2=(Math.PI / 2) + Math.PI / 5;
-		double angle3=(Math.PI / 2) + Math.PI / 5 + Math.PI / 5 ;
-		double angle4=(Math.PI / 2) + Math.PI / 5 + Math.PI / 5 + Math.PI / 5 ;
-		double angle5=(Math.PI / 2) + Math.PI / 5 + Math.PI / 5 + Math.PI / 5 +  Math.PI / 5 ;
+		double angle2=(Math.PI / 2) + 2 * Math.PI / 5;
+		double angle3=(Math.PI / 2) + 2 * Math.PI / 5 + 2 * Math.PI / 5 ;
+		double angle4=(Math.PI / 2) + 2 * Math.PI / 5 + 2 * Math.PI / 5 + 2 * Math.PI / 5 ;
+		double angle5=(Math.PI / 2) + 2 * Math.PI / 5 + 2 * Math.PI / 5 + 2 * Math.PI / 5 +  2 * Math.PI / 5 ;
 		double x1= ((int)(r * Math.cos(angle1)) * 100) / 100.0;
 		double y1= r * Math.sin(angle1);
 		double x2= r * Math.cos(angle2);
