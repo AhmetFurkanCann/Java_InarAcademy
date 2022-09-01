@@ -1,12 +1,14 @@
-package chapters.chapter_03;
+package chapters.chapter_04;
 
 import java.util.Scanner;
 
-public class Exercise_09 {
+public class Exercise_19 {
+
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		System.out.print("Enter the first 9 digits of an ISBN as integer: ");
-		int iban = input.nextInt();
+		String ibanString = input.nextLine();
+		int iban = Integer.parseInt(ibanString);
 
 		int digit1 = iban / 100000000;
 		int remainingDigit = iban % 100000000;
@@ -38,4 +40,5 @@ public class Exercise_09 {
 		}
 
 	}
+
 }
