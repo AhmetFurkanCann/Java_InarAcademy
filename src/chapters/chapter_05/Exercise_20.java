@@ -12,12 +12,12 @@ public class Exercise_20 {
 
 		while (number < 1000) {
 
-			boolean isPrime = true; // Is the current number prime?
+			boolean isPrime = true;
 
 			for (int divisor = 2; divisor <= number / 2; divisor++) {
-				if (number % divisor == 0) { // If true, number is not prime
-					isPrime = false; // Set isPrime to false
-					break; // Exit the for loop
+				if (number % divisor == 0) {
+					isPrime = false; 
+					break; 
 				}
 			}
 
