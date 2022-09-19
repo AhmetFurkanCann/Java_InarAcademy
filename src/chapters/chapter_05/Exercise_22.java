@@ -25,16 +25,18 @@ public class Exercise_22 {
 		double interest ;
 		double principal ;
 		double balance = loanAmount ;
-		System.out.println("Payment#\tInterest\tPrincipal\tBalance");
+		System.out.printf("Payment#    Interest    Principal    Balance");
+		System.out.println();
 		for (int i = 1; i <= years * 12; i++) {
 			interest = (interestRate / 1200 ) * balance;
 			principal = monthlyPayment - interest;
 			balance = balance - principal;
-			System.out.println(i + "\t\t" + interest
-			+ "\t\t" + principal + "\t\t" + balance);
+			System.out.printf("%-8d%4s%-8.2f%4s%-9.2f%4s%-7.2f" , i , " " , interest , " " , principal , " " , balance);
+			System.out.println();
 			}
 		
 		
 	}
 
 }
+

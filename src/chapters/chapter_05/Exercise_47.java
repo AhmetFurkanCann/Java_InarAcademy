@@ -8,7 +8,7 @@ public class Exercise_47 {
 		Scanner input = new Scanner (System.in); 
 		System.out.println("Enter the first 12 digits of an ISBN-13 as a string:");
 		String s = input.nextLine();
-		if (s.length() < 12 ) {
+		if (s.length() != 12 ) {
 			System.out.println(s + " is an invalid input");
 			
 		}
