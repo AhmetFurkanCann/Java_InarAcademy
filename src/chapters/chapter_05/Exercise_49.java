@@ -15,7 +15,7 @@ public class Exercise_49 {
 			if (s.charAt(i)== 'a' || s.charAt(i)== 'e' || s.charAt(i)== 'i' || s.charAt(i)== 'o' || s.charAt(i)== 'u') {
 				vowels++;
 			}
-			else if (s.charAt(i)!= '\s') {
+			else if (s.charAt(i)!= '\n' && s.charAt(i)!= '\t' && s.charAt(i)!= '\r' && s.charAt(i)!= ' ') {
 				consonants++;
 			}
 		}
