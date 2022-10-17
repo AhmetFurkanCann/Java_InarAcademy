@@ -44,14 +44,4 @@ public class Exercise_05 {
         }
         return result;
     }
-
-    public static void getMatrixInput(double[][] matrix1) {
-        Scanner input = new Scanner(System.in);
-        for (int i = 0; i < matrix1.length; i++) {
-            for (int j = 0; j < matrix1[i].length; j++) {
-                matrix1[i][j] = input.nextDouble();
-            }
-        }
-    }
-
 }
