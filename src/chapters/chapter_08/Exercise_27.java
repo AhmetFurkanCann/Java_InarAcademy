@@ -6,28 +6,31 @@ public class Exercise_27 {
     public static void main(String[] args) {
         double[][] matrix = new double[3][3];
         getInputForMatrix(matrix);
-        sortColumns(matrix);
-        displayMatrix(matrix);
+        double[][] result = sortColumns(matrix);
+        displayMatrix(result);
     }
-    public static void sortColumns(double[][] matrix) {
-        for (int z = 0; z < matrix[0].length; z++) {
-            for (int i = 0; i < matrix[0].length - 1; i++) {
-                double currentMin = matrix[i][z];
+    public static double[][] sortColumns(double[][] matrix) {
+        double[][] result = new double[matrix.length][matrix[0].length] ;
+        copyMatrixToResult(result , matrix);
+        for (int z = 0; z < result[0].length; z++) {
+            for (int i = 0; i < result[0].length - 1; i++) {
+                double currentMin = result[i][z];
                 int currentMinIndex = i;
 
-                for (int j = i + 1; j < matrix[0].length; j++) {
-                    if (currentMin > matrix[j][z]) {
-                        currentMin = matrix[j][z];
+                for (int j = i + 1; j < result[0].length; j++) {
+                    if (currentMin > result[j][z]) {
+                        currentMin = result[j][z];
                         currentMinIndex = j;
                     }
                 }
                 if (currentMinIndex != i) {
-                    double temp = matrix[i][z];
-                    matrix[i][z] = matrix[currentMinIndex][z];
-                    matrix[currentMinIndex][z] = temp;
+                    double temp = result[i][z];
+                    result[i][z] = result[currentMinIndex][z];
+                    result[currentMinIndex][z] = temp;
                 }
             }
         }
+        return result ;
     }
     public static void getInputForMatrix(double[][] matrix) {
         Scanner input = new Scanner(System.in);
@@ -35,6 +38,13 @@ public class Exercise_27 {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
                 matrix[i][j] = input.nextDouble();
+            }
+        }
+    }
+    public static void copyMatrixToResult(double[][] result, double[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                result[i][j] = matrix[i][j];
             }
         }
     }

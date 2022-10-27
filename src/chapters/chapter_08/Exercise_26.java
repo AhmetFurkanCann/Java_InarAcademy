@@ -6,27 +6,38 @@ public class Exercise_26 {
     public static void main(String[] args) {
         double[][] matrix = new double[3][3];
         getInputForMatrix(matrix);
-        sortRows(matrix);
-        displayMatrix(matrix);
+        double[][] result = sortRows(matrix);
+        displayMatrix(result);
     }
 
-    public static void sortRows(double[][] matrix) {
-        for (int z = 0; z < matrix.length; z++) {
-            for (int i = 0; i < matrix.length - 1; i++) {
-                double currentMin = matrix[z][i];
+    public static double[][] sortRows(double[][] matrix) {
+        double[][] result = new double[matrix.length][matrix[0].length] ;
+        copyMatrixToResult(result , matrix);
+        for (int z = 0; z < result.length; z++) {
+            for (int i = 0; i < result.length - 1; i++) {
+                double currentMin = result[z][i];
                 int currentMinIndex = i;
 
-                for (int j = i + 1; j < matrix.length; j++) {
-                    if (currentMin > matrix[z][j]) {
-                        currentMin = matrix[z][j];
+                for (int j = i + 1; j < result.length; j++) {
+                    if (currentMin > result[z][j]) {
+                        currentMin = result[z][j];
                         currentMinIndex = j;
                     }
                 }
                 if (currentMinIndex != i) {
-                    double temp = matrix[z][i];
-                    matrix[z][i] = matrix[z][currentMinIndex];
-                    matrix[z][currentMinIndex] = temp;
+                    double temp = result[z][i];
+                    result[z][i] = result[z][currentMinIndex];
+                    result[z][currentMinIndex] = temp;
                 }
+            }
+        }
+        return result;
+    }
+
+    public static void copyMatrixToResult(double[][] result, double[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                result[i][j] = matrix[i][j];
             }
         }
     }
