@@ -27,7 +27,7 @@ public class Exercise_35 {
                     size++;
                     if (j == matrix[0].length - 2){
                         if(size > maxSize){
-                            boolean isPossible = control(size , i , j , matrix) ;
+                            boolean isPossible = control(size + 1 , i , j , matrix) ;
                             if (isPossible) {
                                 maxSize = size;
                                 indexX = i;
