@@ -2,7 +2,7 @@ package chapters.chapter_03;
 
 public class Exercise_04 {
 	public static void main(String[] args) {
-		int number =  (int) (Math.random() * 13 + 1) ;
+		int number =  (int) (Math.random() * 12 + 1) ;
 		System.out.println("Month name of number " + number + " is ");
 		switch (number) {
 		 case 1: System.out.println("January"); break;

@@ -1,6 +1,6 @@
 package chapters.chapter_09;
 
-public class Exercise_08Test {
+public class Exercise_08TestFan {
     public static void main(String[] args) {
         Exercise_08Fan fan1 = new Exercise_08Fan();
         fan1.setSpeed(Exercise_08Fan.FAST);
