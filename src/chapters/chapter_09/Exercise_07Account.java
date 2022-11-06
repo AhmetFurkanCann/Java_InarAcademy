@@ -54,7 +54,12 @@ public class Exercise_07Account {
         return balance * getMonthlyInterestRate() ;
     }
     public void withdraw (double amount) {
-        balance -= amount ;
+        if (balance >= amount) {
+            balance -= amount;
+        }
+        else {
+            System.out.println("You can not withdraw money because your balance is : " + balance);
+        }
     }
     public void deposit (double amount) {
         balance += amount ;
