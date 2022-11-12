@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 public class Exercise_25 {
     public static void main(String[] args) {
-        String[] array = split("ab#12#453", "#");
+        String[] array = split("#ab##12#453", "#");
         printArray(array);
-        array = split("a?b?gf#e", "[?#]") ;
+        array = split("?a?b???gf#e", "[?#]") ;
         printArray(array);
     }
 
@@ -22,7 +22,6 @@ public class Exercise_25 {
         char[] charRegex = getRegex(regex);
         String[] splitArray = new String[chars.length];
         int count = 0;
-        boolean continueToString = false;
         for (int i = 0; i < chars.length ; i++) {
             boolean isContains = false ;
             for (int j = 0; j < charRegex.length ; j++) {
@@ -31,8 +30,13 @@ public class Exercise_25 {
                 }
             }
             if (isContains){
-                count++;
-                splitArray[count] = "" + chars[i] ;
+                if (splitArray[count] == null){
+                    splitArray[count] = "" + chars[i] ;
+                }
+                else {
+                    count++;
+                    splitArray[count] = "" + chars[i] ;
+                }
                 count++;
             }
             else {
