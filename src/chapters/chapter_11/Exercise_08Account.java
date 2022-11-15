@@ -1,18 +1,24 @@
-package chapters.chapter_09;
+package chapters.chapter_11;
 
+import chapters.chapter_01.Exercise_08;
+
+import java.util.ArrayList;
 import java.util.Date;
 
-public class Exercise_07Account {
+public class Exercise_08Account {
     private int id;
     private double balance;
     private double annualInterestRate;
     private Date dateCreated;
+    private String name ;
+    private ArrayList<Exercise_08Transaction> transactions = new ArrayList<>() ;
 
-    public Exercise_07Account() {
-        this(0, 0, 0, new Date());
+    public Exercise_08Account() {
+        this("",0, 0, 0, new Date());
     }
 
-    public Exercise_07Account(int id, double balance, double annualInterestRate, Date dateCreated) {
+    public Exercise_08Account(String name,int id, double balance, double annualInterestRate, Date dateCreated) {
+        this.name = name;
         this.id = id;
         this.balance = balance;
         this.annualInterestRate = annualInterestRate;
@@ -32,6 +38,14 @@ public class Exercise_07Account {
         return dateCreated.toString();
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public ArrayList<Exercise_08Transaction> getTransactions() {
+        return transactions;
+    }
+
     public void setBalance(double balance) {
         this.balance = balance;
     }
@@ -47,6 +61,15 @@ public class Exercise_07Account {
     public void setId(int id) {
         this.id = id;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setTransactions(ArrayList<Exercise_08Transaction> transactions) {
+        this.transactions = transactions;
+    }
+
     public double getMonthlyInterestRate() {
         return ((annualInterestRate / 100) / 12) ;
     }
@@ -56,6 +79,7 @@ public class Exercise_07Account {
     public void withdraw (double amount) {
         if (balance >= amount) {
             balance -= amount;
+            transactions.add(new Exercise_08Transaction(new Date(),'W',amount,balance,"withdraw")) ;
         }
         else {
             System.out.println("You can not withdraw money because your balance is : " + balance);
@@ -63,9 +87,10 @@ public class Exercise_07Account {
     }
     public void deposit (double amount) {
         balance += amount ;
+        transactions.add(new Exercise_08Transaction(new Date(),'D',amount,balance,"deposit")) ;
     }
     @Override
     public String toString() {
-        return "Id : " + getId() + " Balance : " + getBalance() + " AnnualInterestRate : " + getAnnualInterestRate() + " Date Created : " + getDateCreated() ;
+        return "Name : " + name + " Id : " + getId() + " Balance : " + getBalance() + " AnnualInterestRate : " + getAnnualInterestRate() + " Date Created : " + getDateCreated() ;
     }
 }
