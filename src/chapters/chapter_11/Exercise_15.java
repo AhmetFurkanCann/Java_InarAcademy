@@ -17,16 +17,16 @@ public class Exercise_15 {
 
     private static double getTheArea(ArrayList<Double> list, int n) {
         double sum = 0;
-        int indexX1 = 0;
-        int indexX2 = 2;
-        int indexY1 = 1;
-        int indexY2 = 3;
+        int indexX1 = 0;// x1
+        int indexX2 = 2;// x2
+        int indexY1 = 1;//y1
+        int indexY2 = 3;//y2
         for (int i = 0; i < n; i++) {
             if (indexX2 == (n * 2 - 2)) {
                 indexX2 = 0;
             }
             if (indexY2 == (n * 2 - 1)) {
-                indexY2 = 0;
+                indexY2 = 1;
             }
 
             sum += Math.abs((list.get(indexX1) * list.get(indexY2)) - (list.get(indexX2) * list.get(indexY1)));

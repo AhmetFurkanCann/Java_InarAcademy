@@ -9,7 +9,7 @@ public class Exercise_17 {
         System.out.println("Enter an integer m : ");
         int m = input.nextInt();
         int n = algebra(m);
-        System.out.println("The smallest number n for m * n to be a perfect square is 15 m * n is " + n);
+        System.out.println("The smallest number n for m * n to be a perfect square is " + n);
         System.out.println("m * n is " + (m * n));
     }
 
