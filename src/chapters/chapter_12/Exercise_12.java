@@ -28,7 +28,7 @@ public class Exercise_12 {
     private static boolean isJavaCode(File file) {
         String fullName = file.getName();
         int index = fullName.lastIndexOf(".");
-        if ((fullName.substring(index).equals("java"))) {
+        if ((fullName.substring(index + 1).equals("java"))) {
             return true;
         } else {
             return false;

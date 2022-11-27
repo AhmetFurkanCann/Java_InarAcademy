@@ -9,15 +9,15 @@ public class Exercise_17 {
     public static void main(String[] args) throws FileNotFoundException {
         char guessAnotherWord ;
         ArrayList<String> words = new ArrayList<>();
-        do {
-            File sourceFile = new File("hangman.txt");
-            try (
-                    Scanner fileWords = new Scanner(sourceFile);
-            ) {
-                while (fileWords.hasNext()) {
-                    words.add(fileWords.next());
-                }
+        File sourceFile = new File("hangman.txt");
+        try (
+                Scanner fileWords = new Scanner(sourceFile);
+        ) {
+            while (fileWords.hasNext()) {
+                words.add(fileWords.next());
             }
+        }
+        do {
             String word = words.get((int) (Math.random() * words.size()));
             oneWordGuess(word);
             Scanner input = new Scanner(System.in);
