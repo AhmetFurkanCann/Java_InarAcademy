@@ -24,22 +24,22 @@ public class Exercise_31 {
         ArrayList<String> list;
 
         try {
-            URL url = new URL("http://www.cs.armstrong.edu/liang/data/babynamesranking" + year + ".txt");
+            URL url = new URL("http://liveexample.pearsoncmg.com/data/babynameranking"+ year + ".txt");
 
             Scanner inp = new Scanner(url.openStream());
 
             while (inp.hasNext()) {
                 String str = inp.nextLine();
-                list = new ArrayList<>(Arrays.asList(str.split(" ")));
+                list = new ArrayList<>(Arrays.asList(str.split("\\s+")));
 
-                if(gender.toUpperCase() == "M"){
-                    if(list.get(1).equals(name)){
+                if((gender).equalsIgnoreCase("M")){
+                    if((list.get(1)).equals(name)){
                         System.out.println(name + " is ranked #" + list.get(0) + " in year " + year);
                         System.exit(0);
 
                     }
                 }else {
-                    if(list.get(3).equals(name)) {
+                    if((list.get(3)).equals(name)) {
                         System.out.println(name + " is ranked #" + list.get(0) + " in year " + year);
                         System.exit(1);
                     }

@@ -13,7 +13,13 @@ public class Exercise_18 {
             System.out.println("Usage: java Exercise12_20 srcRootDirectory");
             System.exit(1);
         }
+
         File srcRootDirectory = new File(args[0]);
+        if (!srcRootDirectory.isDirectory()) {
+            System.out.println("File in not a directory !");
+            System.exit(2);
+        }
+
         ArrayList<File> list = new ArrayList<>(Arrays.asList(srcRootDirectory.listFiles()));
         while (!list.isEmpty()) {
             if (list.get(0).isDirectory()) {
@@ -31,7 +37,7 @@ public class Exercise_18 {
     private static boolean isJavaCode(File file) {
         String fullName = file.getName();
         int index = fullName.lastIndexOf(".");
-        if ((fullName.substring(index).equals("java"))) {
+        if ((fullName.substring(index + 1).equals("java"))) {
             return true;
         } else {
             return false;
